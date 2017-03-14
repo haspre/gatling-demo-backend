@@ -26,7 +26,6 @@ public class ApiController {
         return resource;
     }
 
-
     @RequestMapping(path = "/resources/{id}", method = GET)
     public Resource get(@PathVariable("id") Long id) {
         return resources.get(id);
