@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>demo</name>
+    <name>Gatling Demo Backend</name>
     <description>sample backend to demonstrate Load-/Stresstest Tools usage</description>
     <developers>
         <developer>Rainer Steinegger - rainer@steinegger.net</developer>
