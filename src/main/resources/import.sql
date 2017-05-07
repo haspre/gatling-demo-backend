@@ -1,6 +1,6 @@
 drop table if exists unicorns;
 
-create table unicorns (id int primary key auto_increment, firstName varchar, lastName varchar, gender varchar, age int);
+create table unicorns (id INTEGER IDENTITY PRIMARY KEY, firstName VARCHAR(100), lastName VARCHAR(100), gender VARCHAR(6), age INTEGER);
 
 insert into unicorns (firstName, lastName, gender, age) values ('Pinkie', 'Pie', 'female', 120);
 insert into unicorns (firstName, lastName, gender, age) values ('rainbow', 'dash', 'female', 49);
