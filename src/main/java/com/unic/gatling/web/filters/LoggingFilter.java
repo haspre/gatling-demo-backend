@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 import static java.lang.String.format;
@@ -29,11 +30,12 @@ public class LoggingFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
         long startTime = currentTimeMillis();
-        log.info("API call start");
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+        log.info(format("API call start - %s %s", httpServletRequest.getMethod(), httpServletRequest.getRequestURL()));
 
         chain.doFilter(request, response);
 
-        log.info(format("API call end - duration %dms", currentTimeMillis() - startTime));
+        log.info(format("API call end   - %s %s - duration %dms", httpServletRequest.getMethod(), httpServletRequest.getRequestURL(), currentTimeMillis() - startTime));
     }
 
     @Override
