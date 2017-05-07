@@ -1,6 +1,10 @@
 package com.unic.gatling.web.filters;
 
-import java.io.IOException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -9,12 +13,10 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import java.io.IOException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
+import static java.lang.String.format;
+import static java.lang.System.currentTimeMillis;
 
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -26,11 +28,12 @@ public class LoggingFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
+        long startTime = currentTimeMillis();
         log.info("API call start");
 
         chain.doFilter(request, response);
 
-        log.info("API call end");
+        log.info(format("API call end - duration %d", currentTimeMillis() - startTime));
     }
 
     @Override
