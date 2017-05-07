@@ -33,7 +33,7 @@ public class LoggingFilter implements Filter {
 
         chain.doFilter(request, response);
 
-        log.info(format("API call end - duration %d", currentTimeMillis() - startTime));
+        log.info(format("API call end - duration %dms", currentTimeMillis() - startTime));
     }
 
     @Override
