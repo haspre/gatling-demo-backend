@@ -33,14 +33,6 @@ public class UnicornMapperTest {
     }
 
     @Test
-    public void findAll() {
-
-        List<Unicorn> allUnicorns = unicornMapper.findAll();
-
-        assertThat(allUnicorns, not(empty()));
-    }
-
-    @Test
     public void filterByAgeAndGender() {
 
         Unicorn youngUnicorn = anyFemaleUnicornBuilder()
@@ -48,7 +40,7 @@ public class UnicornMapperTest {
                 .build();
         unicornMapper.create(youngUnicorn);
 
-        List<Unicorn> youngUnicorns = unicornMapper.filterByMaxAgeAndGender(35, female);
+        List<Unicorn> youngUnicorns = unicornMapper.filter(35, female);
 
         assertThat(youngUnicorns, not(empty()));
     }

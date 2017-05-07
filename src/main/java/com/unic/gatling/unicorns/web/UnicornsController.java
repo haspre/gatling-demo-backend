@@ -36,12 +36,6 @@ public class UnicornsController {
         return unicorn;
     }
 
-    @RequestMapping(method = GET)
-    public List<Unicorn> findAll() {
-
-        return unicornMapper.findAll();
-    }
-
     @RequestMapping(path = "/{id}", method = GET)
     public Unicorn get(@PathVariable("id") long id) {
 
@@ -49,8 +43,8 @@ public class UnicornsController {
     }
 
     @RequestMapping(method = GET)
-    public List<Unicorn> filterByMaxAgeAndGender(@RequestParam int age, @RequestParam Gender gender) {
+    public List<Unicorn> filter(@RequestParam(required = false) Integer maxAge, @RequestParam(required = false) Gender gender) {
 
-        return unicornMapper.filterByMaxAgeAndGender(age, gender);
+        return unicornMapper.filter(maxAge, gender);
     }
 }

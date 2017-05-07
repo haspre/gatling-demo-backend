@@ -15,12 +15,15 @@ public interface UnicornMapper {
     @SelectKey(statement = "call identity()", keyProperty = "id", before = false, resultType = long.class)
     long create(Unicorn unicorn);
 
-    @Select("SELECT * FROM Unicorns")
-    List<Unicorn> findAll();
-
     @Select("SELECT * FROM Unicorns WHERE id = #{id}")
     Unicorn findOneById(@Param("id") long id);
 
-    @Select("SELECT * FROM Unicorns WHERE age <= #{age} AND gender IS #{gender}")
-    List<Unicorn> filterByMaxAgeAndGender(@Param("age") int age, @Param("gender") Gender gender);
+    @Select("<script>" +
+            "   SELECT * FROM Unicorns " +
+            "   <where>" +
+            "       <if test=\"age != null\">age=#{age}</if>" +
+            "       <if test=\"gender != null\">AND gender=#{gender}</if>" +
+            "   </where>" +
+            "</script>")
+    List<Unicorn> filter(@Param("age") Integer age, @Param("gender") Gender gender);
 }
