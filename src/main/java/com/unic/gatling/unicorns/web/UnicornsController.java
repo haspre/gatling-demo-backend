@@ -32,7 +32,7 @@ public class UnicornsController {
     @ResponseStatus(CREATED)
     public Unicorn create(@RequestBody Unicorn unicorn) {
 
-        unicorn.id = unicornMapper.create(unicorn);
+        unicornMapper.create(unicorn);
         return unicorn;
     }
 

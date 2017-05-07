@@ -12,8 +12,8 @@ import java.util.List;
 public interface UnicornMapper {
 
     @Insert("insert into unicorns (firstName, lastName, age, gender) values (#{firstName}, #{lastName}, #{age}, #{gender})")
-    @SelectKey(statement = "call identity()", keyProperty = "id", before = false, resultType = long.class)
-    long create(Unicorn unicorn);
+    @SelectKey(statement = "CALL IDENTITY()", keyProperty = "id", before = false, resultType = long.class)
+    void create(Unicorn unicorn);
 
     @Select("SELECT * FROM Unicorns WHERE id = #{id}")
     Unicorn findOneById(@Param("id") long id);
