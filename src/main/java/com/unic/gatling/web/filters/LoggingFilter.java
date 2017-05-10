@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -31,11 +32,20 @@ public class LoggingFilter implements Filter {
 
         long startTime = currentTimeMillis();
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        log.info(format("API call start - %s %s", httpServletRequest.getMethod(), httpServletRequest.getRequestURL()));
-
         chain.doFilter(request, response);
 
-        log.info(format("API call end   - %s %s - duration %dms", httpServletRequest.getMethod(), httpServletRequest.getRequestURL(), currentTimeMillis() - startTime));
+        log.info(format("%s %s - duration %dms", httpServletRequest.getMethod(), getRequestURLWithParams(httpServletRequest), currentTimeMillis() - startTime));
+    }
+
+    private StringBuffer getRequestURLWithParams(HttpServletRequest httpServletRequest) {
+        StringBuffer requestURL = httpServletRequest.getRequestURL();
+
+        String queryString = httpServletRequest.getQueryString();
+
+        if (StringUtils.hasText(queryString)) {
+            requestURL.append(format("?%s", queryString));
+        }
+        return requestURL;
     }
 
     @Override
