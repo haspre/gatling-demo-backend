@@ -43,8 +43,9 @@ public class UnicornsController {
     }
 
     @RequestMapping(method = GET)
-    public List<Unicorn> filter(@RequestParam(required = false) Integer maxAge, @RequestParam(required = false) Gender gender) {
+    public List<Unicorn> filter(@RequestParam(required = false) Integer maxAge, @RequestParam(required = false) Gender gender,
+                                @RequestParam(required = false, defaultValue = "500") int maxResults) {
 
-        return unicornMapper.filter(maxAge, gender);
+        return unicornMapper.filter(maxAge, gender, maxResults);
     }
 }

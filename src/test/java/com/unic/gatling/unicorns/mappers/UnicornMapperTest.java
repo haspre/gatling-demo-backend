@@ -26,9 +26,10 @@ public class UnicornMapperTest {
     @Test
     public void createAndRead() {
 
-        long id = unicornMapper.create(anyFemaleUnicorn());
+        Unicorn unicorn = anyFemaleUnicorn();
+        unicornMapper.create(unicorn);
 
-        Unicorn copyFromDB = unicornMapper.findOneById(id);
+        Unicorn copyFromDB = unicornMapper.findOneById(unicorn.id);
         assertThat(copyFromDB, notNullValue());
     }
 
@@ -40,7 +41,7 @@ public class UnicornMapperTest {
                 .build();
         unicornMapper.create(youngUnicorn);
 
-        List<Unicorn> youngUnicorns = unicornMapper.filter(35, female);
+        List<Unicorn> youngUnicorns = unicornMapper.filter(35, female, null);
 
         assertThat(youngUnicorns, not(empty()));
     }

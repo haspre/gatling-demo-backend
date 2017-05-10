@@ -21,9 +21,10 @@ public interface UnicornMapper {
     @Select("<script>" +
             "   SELECT * FROM Unicorns " +
             "   <where>" +
-            "       <if test=\"age != null\">age=#{age}</if>" +
+            "       <if test=\"maxAge != null\">age&lt;=#{maxAge}</if>" +
             "       <if test=\"gender != null\">AND gender=#{gender}</if>" +
             "   </where>" +
+            "   <if test=\"maxResults != null\"> LIMIT #{maxResults}</if>" +
             "</script>")
-    List<Unicorn> filter(@Param("age") Integer age, @Param("gender") Gender gender);
+    List<Unicorn> filter(@Param("maxAge") Integer maxAge, @Param("gender") Gender gender, @Param("maxResults") Integer maxResults);
 }
