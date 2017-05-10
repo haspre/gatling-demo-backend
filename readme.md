@@ -1,3 +1,8 @@
+start service
+```
+    mvn clean spring-boot:run
+```
+
 create unicorn
 ```
     curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST "localhost:8080/unicorns" -d '{"firstName":"rainer","lastName":"steinegger","age":35,"gender":"male"}'
