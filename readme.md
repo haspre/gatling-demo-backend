@@ -1,19 +1,14 @@
 create unicorn
 ```
-    curl -X POST "localhost:8080/resources"
+    curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST "localhost:8080/unicorns" -d '{"firstName":"rainer","lastName":"steinegger","age":35,"gender":"male"}'
 ```
 
 get unicorn
 ```
-    curl "localhost:8080/resources/1990082281904238954"
+    curl -H "Accept: application/json" -H "Content-Type: application/json" "http://localhost:8080/unicorns/6"
 ```
 
 filter unicorns
 ```
-url -H "Accept: application/json" -H "Content-Type: application/json" "http://localhost:8080/unicorns?maxAge=100&gender=male&maxResults=2"
-```
-
-configure constant delay via JMX
-```
-    MBean 'com.unic:name=DelayConfiguration' with attribute 'delayInSeconds'
+    url -H "Accept: application/json" -H "Content-Type: application/json" "http://localhost:8080/unicorns?maxAge=100&gender=male&maxResults=2"
 ```
