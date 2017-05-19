@@ -45,11 +45,8 @@ public class FrontendController {
     @PostMapping
     public ModelAndView create(Unicorn unicorn, BindingResult result,
                                RedirectAttributes redirect) {
-        if (result.hasErrors()) {
-            return new ModelAndView("messages/form", "formErrors", result.getAllErrors());
-        }
         this.unicornMapper.create(unicorn);
         redirect.addFlashAttribute("globalMessage", "Successfully registered.");
-        return new ModelAndView("redirect:/details/{unicorn.id}", "unicorn.id", unicorn.id);
+        return new ModelAndView("redirect:/details/{unicorn.id}", "unicorn.id", unicorn.getId());
     }
 }
