@@ -37,7 +37,7 @@ public class FrontendController {
         return new ModelAndView("details", "unicorn", unicorn);
     }
 
-    @GetMapping(params = "registration")
+    @GetMapping("/registration")
     public String registrationForm(@ModelAttribute Unicorn unicorn) {
         return "registration";
     }
