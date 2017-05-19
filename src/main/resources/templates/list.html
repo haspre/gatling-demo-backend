@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Unicorn Dating Service</title>
+</head>
+<body>
+<div class="container">
+    <div class="container">
+        <div class="pull-right">
+            <a href="form.html" th:href="@{/(registration)}">Registration</a>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <td>Name</td>
+                <td>Age</td>
+                <td>Gender</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${unicorns.empty}">
+                <td colspan="4">No messages</td>
+            </tr>
+            <tr th:each="unicorn : ${unicorns}">
+                <td th:text="${unicorn.firstName}"></td>
+                <td th:text="${unicorn.age}"></td>
+                <td th:text="${unicorn.gender}"></td>
+                <td><a href="details.html" th:href="@{'/details/' + ${unicorn.id}}">More...</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -2,8 +2,8 @@ drop table if exists unicorns;
 
 create table unicorns (id INTEGER IDENTITY PRIMARY KEY, firstName VARCHAR(100), lastName VARCHAR(100), gender VARCHAR(6), age INTEGER);
 
-insert into unicorns (firstName, lastName, gender, age) values ('Pinkie', 'Pie', 'female', 120);
-insert into unicorns (firstName, lastName, gender, age) values ('rainbow', 'dash', 'female', 49);
+insert into unicorns (firstName, lastName, gender, age) values ('Pinkie', 'Apple', 'female', 120);
+insert into unicorns (firstName, lastName, gender, age) values ('Rain', 'Dashy', 'female', 49);
 insert into unicorns (firstName, lastName, gender, age) values ('Bluebell', 'Plum', 'female', 222);
 insert into unicorns (firstName, lastName, gender, age) values ('Fern', 'Nostrils', 'female', 99);
 insert into unicorns (firstName, lastName, gender, age) values ('Daffodil', 'Sparkle', 'female', 78);

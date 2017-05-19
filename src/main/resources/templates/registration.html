@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration</title>
+</head>
+<body>
+<div class="container">
+
+    <h1>Register</h1>
+    <form id="messageForm" th:action="@{/(registration)}" th:object="${unicorn}" action="#" method="post">
+        <div th:if="${#fields.hasErrors('*')}" class="alert alert-error">
+            <p th:each="error : ${#fields.errors('*')}" th:text="${error}">Validation error</p>
+        </div>
+
+        <div class="form-actions">
+            <input type="submit" value="Save"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>
