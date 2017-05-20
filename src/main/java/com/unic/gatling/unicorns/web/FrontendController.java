@@ -1,5 +1,6 @@
 package com.unic.gatling.unicorns.web;
 
+import com.unic.gatling.unicorns.mappers.Gender;
 import com.unic.gatling.unicorns.mappers.Unicorn;
 import com.unic.gatling.unicorns.mappers.UnicornMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -25,8 +27,9 @@ public class FrontendController {
     }
 
     @GetMapping
-    public ModelAndView list() {
-        Iterable<Unicorn> unicorns = this.unicornMapper.filter(null, null, null);
+    public ModelAndView list(@RequestParam(required = false) Integer maxAge, @RequestParam(required = false) Gender gender,
+                             @RequestParam(required = false, defaultValue = "500") int maxResults) {
+        Iterable<Unicorn> unicorns = this.unicornMapper.filter(maxAge, gender, maxResults);
         return new ModelAndView("list", "unicorns", unicorns);
     }
 

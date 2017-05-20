@@ -5,7 +5,7 @@ public class Unicorn {
     private long id;
     private String firstName;
     private String lastName;
-    private int age;
+    private Integer age;
     private Gender gender;
 
     public long getId() {
@@ -32,11 +32,11 @@ public class Unicorn {
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
