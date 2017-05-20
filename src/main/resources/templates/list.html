@@ -36,7 +36,7 @@
                         <td colspan="4">No messages</td>
                     </tr>
                     <tr th:each="unicorn : ${unicorns}">
-                        <td th:text="${unicorn.firstName}"></td>
+                        <td><span th:text="${unicorn.firstName}" /> <span th:text="${unicorn.lastName}" /></td>
                         <td th:text="${unicorn.age}"></td>
                         <td th:text="${unicorn.gender}"></td>
                         <td><a href="details.html" th:href="@{'/details/' + ${unicorn.id}}">More...</a></td>

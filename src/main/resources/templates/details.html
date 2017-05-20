@@ -22,9 +22,28 @@
         </div>
     </div>
     <div class="container" style="width: 800px;">
-        Name: <span th:text="${unicorn.firstName}"></span>
-        Age: <span th:text="${unicorn.age}"></span>
-        Gender: <span th:text="${unicorn.gender}"></span>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-responsive" src="../images/placeholder.png" />
+             </div>
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="row">
+                        <span th:text="${unicorn.firstName}" /> <span th:text="${unicorn.lastName}" />
+                    </div>
+                    <div class="row">
+                        <span th:text="${unicorn.age}" />
+                    </div>
+                    <div class="row">
+                        <span th:text="${unicorn.gender}" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-default">Send a message!</button>
+            </div>
+        </div>
     </div>
 </div>
 </body>

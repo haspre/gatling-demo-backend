@@ -29,7 +29,7 @@ public class UnicornMapperTest {
         Unicorn unicorn = anyFemaleUnicorn();
         unicornMapper.create(unicorn);
 
-        Unicorn copyFromDB = unicornMapper.findOneById(unicorn.id);
+        Unicorn copyFromDB = unicornMapper.findOneById(unicorn.getId());
         assertThat(copyFromDB, notNullValue());
     }
 

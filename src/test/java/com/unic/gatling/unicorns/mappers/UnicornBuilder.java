@@ -48,10 +48,10 @@ public class UnicornBuilder {
 
     public Unicorn build() {
         Unicorn unicorn = new Unicorn();
-        unicorn.firstName = firstName;
-        unicorn.lastName = lastName;
-        unicorn.age = age;
-        unicorn.gender = gender;
+        unicorn.setFirstName(firstName);
+        unicorn.setLastName(lastName);
+        unicorn.setAge(age);
+        unicorn.setGender(gender);
         return unicorn;
     }
 }
