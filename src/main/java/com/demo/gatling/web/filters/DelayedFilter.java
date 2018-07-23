@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 @ManagedResource(objectName = "com.demo:name=DelayConfiguration")
 @WebFilter(urlPatterns = "*")
-public class git add DelayedFilter implements Filter {
+public class DelayedFilter implements Filter {
 
     private int delayInSeconds = 0;
 
