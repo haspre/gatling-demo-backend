@@ -1,6 +1,6 @@
-package com.unic.gatling.unicorns.mappers;
+package com.demo.gatling.unicorns.mappers;
 
-import static com.unic.gatling.unicorns.mappers.Gender.female;
+import static com.demo.gatling.unicorns.mappers.Gender.female;
 
 public class UnicornBuilder {
 

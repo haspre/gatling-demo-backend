@@ -1,4 +1,4 @@
-package com.unic.gatling.web.filters;
+package com.demo.gatling.web.filters;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

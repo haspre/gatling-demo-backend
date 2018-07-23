@@ -1,4 +1,4 @@
-package com.unic.gatling.unicorns.mappers;
+package com.demo.gatling.unicorns.mappers;
 
 public enum Gender {
 

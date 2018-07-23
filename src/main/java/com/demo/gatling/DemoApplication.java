@@ -1,7 +1,8 @@
-package com.unic.gatling;
+package com.demo.gatling;
 
-import com.unic.gatling.unicorns.mappers.Unicorn;
-import com.unic.gatling.unicorns.mappers.UnicornMapper;
+import com.demo.gatling.unicorns.mappers.Unicorn;
+import com.demo.gatling.unicorns.mappers.UnicornMapper;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.unic.gatling.unicorns.mappers;
+package com.demo.gatling.unicorns.mappers;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

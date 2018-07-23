@@ -1,4 +1,4 @@
-package com.unic.gatling.unicorns.mappers;
+package com.demo.gatling.unicorns.mappers;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,9 +8,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static com.unic.gatling.unicorns.mappers.Gender.female;
-import static com.unic.gatling.unicorns.mappers.UnicornBuilder.anyFemaleUnicorn;
-import static com.unic.gatling.unicorns.mappers.UnicornBuilder.anyFemaleUnicornBuilder;
+import static com.demo.gatling.unicorns.mappers.Gender.female;
+import static com.demo.gatling.unicorns.mappers.UnicornBuilder.anyFemaleUnicorn;
+import static com.demo.gatling.unicorns.mappers.UnicornBuilder.anyFemaleUnicornBuilder;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.IsNull.notNullValue;

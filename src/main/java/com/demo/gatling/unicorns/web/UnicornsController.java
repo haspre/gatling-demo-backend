@@ -1,8 +1,9 @@
-package com.unic.gatling.unicorns.web;
+package com.demo.gatling.unicorns.web;
 
-import com.unic.gatling.unicorns.mappers.Gender;
-import com.unic.gatling.unicorns.mappers.Unicorn;
-import com.unic.gatling.unicorns.mappers.UnicornMapper;
+import com.demo.gatling.unicorns.mappers.Gender;
+import com.demo.gatling.unicorns.mappers.Unicorn;
+import com.demo.gatling.unicorns.mappers.UnicornMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;

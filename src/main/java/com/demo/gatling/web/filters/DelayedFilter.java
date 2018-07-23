@@ -1,4 +1,4 @@
-package com.unic.gatling.web.filters;
+package com.demo.gatling.web.filters;
 
 import java.io.IOException;
 
@@ -15,9 +15,9 @@ import org.springframework.jmx.export.annotation.ManagedResource;
 import org.springframework.stereotype.Component;
 
 @Component
-@ManagedResource(objectName = "com.unic:name=DelayConfiguration")
+@ManagedResource(objectName = "com.demo:name=DelayConfiguration")
 @WebFilter(urlPatterns = "*")
-public class DelayedFilter implements Filter {
+public class git add DelayedFilter implements Filter {
 
     private int delayInSeconds = 0;
 
